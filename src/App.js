@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import Home from './Home';
+import logo from './logo.png';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+//Toggles nav menu visibility
+const toggleNav = () =>
+  document.querySelector('nav').classList.toggle('toggle-menu');
+
+const App = () => (
+  <div>
+    <header>
+        <Link to="/">
+        <img src={logo} className="logo" alt="logo" />
+        </Link>
+     
+    </header>
+    <div id="wrapper">
+      <nav className="toggle-menu">
+        <ul>
+          <NavLinkItem anchor="Home" path="/" />
+         
+        </ul>
+      </nav>
+      <Route exact path="/" render={() => <Home />} />
+      
     </div>
-  );
-}
+  </div>
+);
+
+//Returns list item containing a NavLink
+const NavLinkItem = ({ anchor, path }) => (
+  <li>
+    <NavLink exact to={path} activeClassName="active" onClick={toggleNav}>
+      {anchor}
+    </NavLink>
+  </li>
+);
 
 export default App;

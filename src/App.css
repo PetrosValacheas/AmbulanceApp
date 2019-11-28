@@ -1,22 +1,309 @@
-.App {
+/*Header*/
+
+h1 {
+  background: lightblue;
+  padding: 10px 15px;
+  color: #111;
+  font-weight: lighter;
+  margin-top: 0;
+  font-size: 24px;
+  text-shadow: 0 -1px #fff;
+  border-bottom: solid 1px #666;
+  border-radius: 0 0 20px 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  border-bottom: solid 2px black;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 80px;
+  justify-content: space-between;
+  padding: 0 30px 0 70px;
 }
 
-.App-link {
-  color: #09d3ac;
+header svg {
+  width: 50px;
+}
+
+.logo {
+  height: 80px;
+}
+
+#toggle-link {
+  display: flex;
+}
+
+/*Nav bar*/
+
+nav {
+  background: #000;
+  height: 100%;
+  margin-left: 0;
+  min-height: calc(100vh - 82px);
+  min-width: 200px;
+  position: absolute;
+  text-align: center;
+  transition: margin 0.5s;
+  z-index: 999;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+nav ul {
+  margin-top: 40px;
+}
+
+nav li {
+  margin-bottom: 20px;
+}
+
+.toggle-menu {
+  margin-left: -200px;
+}
+
+/*Content*/
+
+#wrapper {
+  display: flex;
+  position: relative;
+}
+
+main {
+  padding: 0px 20px 20px 20px;
+  width: 100%;
+}
+
+/*Home Page*/
+
+#home-splash {
+  display: block;
+  margin: auto;
+  max-width: 1000px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+article {
+  border-bottom: 1px solid #bbb;
+  display: flex;
+  padding: 20px 0;
+  text-align: center;
+}
+
+article:first-of-type {
+  border-top: 1px solid #bbb;
+}
+
+article img {
+  display: none;
+}
+
+/*About Page*/
+
+#contact-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.person {
+  border-bottom: solid 1px #bbb;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.person h2 {
+  font-size: 18px;
+}
+
+.person-details {
+  align-self: center;
+}
+
+.person-info {
+  display: flex;
+}
+
+.person-info img {
+  align-self: center;
+  height: 85px;
+  padding-right: 10px;
+  min-width: 85px;
+}
+
+/*Contact Page*/
+
+/* > Map*/
+#map-container {
+  height: calc(-240px + 100vh);
+  width: 100%;
+}
+
+#map-container address {
+  font-size: 16px;
+}
+
+#map-container address span {
+  font-weight: bold;
+}
+
+/* > Form */
+form {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+form div {
+  margin-top: 15px;
+}
+
+label {
+  display: inline-block;
+  padding-right: 5px;
+  text-align: right;
+}
+
+textarea {
+  height: 80px;
+  vertical-align: top;
+}
+
+input,
+textarea {
+  border: 1px solid #888;
+  font: 16px sans-serif;
+  width: 100%;
+}
+
+#button {
+  text-align: center;
+}
+
+button {
+  padding: 7px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #000;
+}
+
+/*Media Queries*/
+
+@media screen and (min-width: 500px) {
+  form div {
+    display: flex;
+  }
+  label {
+    width: 100px;
+  }
+  #button {
+    justify-content: right;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .person img {
+    height: 176px;
+    min-width: 176px;
+  }
+  .person h2 {
+    font-size: 22px;
+  }
+  .person address {
+    font-size: 20px;
+  }
+  .person-description {
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    border-radius: 0;
+    margin: 0 -20px 20px -20px;
+
+    text-align: left;
+  }
+  .toggle-menu {
+    margin-left: 0;
+  }
+  main {
+    padding-left: 220px;
+  }
+  article {
+    text-align: left;
+  }
+  #toggle-link {
+    display: none;
+  }
+  .person {
+    border: solid 1px #bbb;
+    border-radius: 20px 0;
+    box-shadow: 2px 2px 10px #666;
+    padding: 20px;
+  }
+  .person h2 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #map-container {
+    width: 50%;
+  }
+  form {
+    margin-right: 20px;
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  article img {
+    border-radius: 20px 0;
+    display: block;
+    margin-right: 30px;
+    min-width: 500px;
+  }
+  .person {
+    max-width: 1000px;
+  }
+  input,
+  textarea,
+  #button {
+    max-width: 500px;
+  }
+  #button {
+    margin-left: 110px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  header {
+    height: 120px;
+  }
+  .logo {
+    height: 120px;
+  }
+  nav {
+    min-width: 300px;
+  }
+  nav a {
+    font-size: 22px;
+  }
+  nav li {
+    margin-bottom: 30px;
+  }
+  main {
+    padding-left: 320px;
+  }
+  .header {
+    padding: 10px 110px;
+  }
 }
