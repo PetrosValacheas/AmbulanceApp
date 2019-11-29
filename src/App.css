@@ -307,3 +307,51 @@ textarea:focus {
     padding: 10px 110px;
   }
 }
+
+
+#map{
+  height: calc(100vh - 190px);
+  width: calc(100vw - 4px);
+  margin-left: calc(-19px + 2px);
+}
+.Map-button-group{
+
+  text-align: center;
+
+
+}  
+
+.location-name{
+
+  margin-left: 320px;
+  font-size: 24px;
+}
+
+.Google-map-wrapper{
+
+  background-color: #14A760;
+}
+
+#locationButton{
+
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+  width: 15%;
+  font-size: 22px;
+
+  background-color: #2E9CCA;
+
+}
+
+#hospitalSearch{
+
+
+
+  width: 15%;
+  font-size: 22px;
+
+  background-color: #2E9CCA;
+
+}
+

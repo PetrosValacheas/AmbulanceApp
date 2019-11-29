@@ -4,10 +4,13 @@ import { NavLink, Link } from 'react-router-dom';
 import Home from './Home';
 import logo from './logo.png';
 import './App.css';
+import GoogleMap from './components/GoogleMap.js'
+
 
 //Toggles nav menu visibility
 const toggleNav = () =>
   document.querySelector('nav').classList.toggle('toggle-menu');
+
 
 const App = () => (
   <div>
@@ -21,10 +24,15 @@ const App = () => (
       <nav className="toggle-menu">
         <ul>
           <NavLinkItem anchor="Home" path="/" />
+          <NavLinkItem anchor="Hospitals" path="/hospitals" />
+          
          
         </ul>
       </nav>
-      <Route exact path="/" render={() => <Home />} />
+      <Route exact path="/" render={() => <Home />} />  
+      <Route exact path="/hospitals" render={() => <GoogleMap />} />
+
+  
       
     </div>
   </div>
