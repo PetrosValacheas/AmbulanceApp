@@ -7,17 +7,11 @@ import { initMap, getAreaName, nearbySearch } from '../helpers/GoogleMapHelper'
 // https://developers.google.com/places/supported_types?hl=ja
 const placeTypes = {
   
-    name : 'Hospitals',
-    id : 'Hospitals'
+    name : 'hospital',
+    id : 'hospital'
 }
 
 
-
-const wellStyles = {
-  height: 100+'vh',
-  margin: 0,
-  paddingTop: 80+'px'
-};
 
 class GoogleMap extends Component {
   constructor(props) {
@@ -44,10 +38,8 @@ class GoogleMap extends Component {
   nearbySearch(e) {
     // alert(e.currentTarget.getAttribute('data-type'))
 
-    //let locationTypes = e.currentTarget.getAttribute('data-type')
-    nearbySearch(e, 800)
-   
-    this.setState({placeType: `     Nearby${placeTypes.name}`});
+    let locationTypes = e.currentTarget.getAttribute('data-type')
+    nearbySearch([locationTypes], 1000)
   }
   componentDidMount() {
   
@@ -64,7 +56,7 @@ class GoogleMap extends Component {
           
             Current Location
           </Button>
-          <Button bssize="large"  id="hospitalSearch" onClick={this.nearbySearch} value={placeTypes.name} >  Show Hospitals
+          <Button bssize="large"  id="hospitalSearch" onClick={this.nearbySearch} data-type={placeTypes.name} >  Show Hospitals
             
           
           </Button>
