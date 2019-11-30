@@ -372,3 +372,28 @@ textarea:focus {
 
 }
 
+.card{
+
+  margin-left: 200px;
+}
+
+.SymptomsContainer {
+
+  width: 2000px;
+  height : 50px;
+  background-color: grey;
+  margin-bottom: 10px;
+
+
+}
+
+.SymptomsContainer > h1{
+
+  text-align: center;
+  font-size: 30px;
+  font-style: bold;
+  font-family: sans-serif;
+ 
+
+}
+

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-  
-
   class Diagnosis extends Component{
 
   	constructor(props) {
@@ -18,18 +16,32 @@ import React, { Component } from 'react';
         	this.setState({ contacts: data })
         })
         .catch(console.log)
-
-     }
+    }
     
-
   	render(){
   		return (
 
-  			<h1>Hello</h1>
+  		  <div className="symptoms">
+          <div className="SymptomsContainer">
+
+              <h1>Symptom List</h1>
+
+          </div>
+          {this.state.contacts.map((contact) => (
+
+          	 <div className="card">
+              <div className="card-body">
+                <h2 className="card-title">{contact.Name}</h2>
+               
+               </div>
+             </div>
+           
+          ))}
+        </div>
+
+  		   
   		);
   	}
-
-  
 }
 
 export default Diagnosis;
