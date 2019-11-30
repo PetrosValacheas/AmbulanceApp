@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { initMap, getAreaName, nearbySearch } from '../helpers/GoogleMapHelper'
 
-// const initPoint = {lat: 35.6795253, lng: 139.7589926}; // 東京駅
+// const initPoint = {lat: 35.6795253, lng: 139.7589926}; 
 
 // https://developers.google.com/places/supported_types?hl=ja
 const placeTypes = {

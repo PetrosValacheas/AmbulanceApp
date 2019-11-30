@@ -337,6 +337,8 @@ textarea:focus {
   margin-top: 10px;
   margin-bottom: 15px;
 
+  margin-left: 850px;
+
   width: 15%;
   font-size: 22px;
 
@@ -351,8 +353,13 @@ textarea:focus {
 
 #hospitalSearch{
 
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+   margin-left: 40px;
+
   border: 0;
-  margin-left: 100px;
+
 
   border-radius: 5px;
 

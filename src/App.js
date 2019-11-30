@@ -5,6 +5,7 @@ import Home from './Home';
 import logo from './logo.png';
 import './App.css';
 import GoogleMap from './components/GoogleMap.js'
+import Diagnosis from './components/diagnosis.js'
 
 
 //Toggles nav menu visibility
@@ -13,6 +14,7 @@ const toggleNav = () =>
 
 
 const App = () => (
+
   <div>
     <header>
         <Link to="/">
@@ -25,7 +27,7 @@ const App = () => (
         <ul>
           <NavLinkItem anchor="Home" path="/" />
           <NavLinkItem anchor="Hospitals" path="/hospitals" />
-           <NavLinkItem anchor="Medical Diagnosis" path="/diagnosis" />
+          <NavLinkItem anchor="Medical Diagnosis" path="/diagnosis" />
 
           
          
@@ -33,6 +35,7 @@ const App = () => (
       </nav>
       <Route exact path="/" render={() => <Home />} />  
       <Route exact path="/hospitals" render={() => <GoogleMap />} />
+      <Route exact path="/diagnosis" render={() => <Diagnosis />} />
 
   
       
