@@ -274,7 +274,7 @@ textarea:focus {
   .person {
     max-width: 1000px;
   }
-  input,
+ 
   textarea,
   #button {
     max-width: 500px;
@@ -384,7 +384,6 @@ textarea:focus {
   background-color: grey;
   margin-bottom: 10px;
 
-
 }
 
 .SymptomsContainer > h1{
@@ -394,6 +393,12 @@ textarea:focus {
   font-style: bold;
   font-family: sans-serif;
  
+}
+
+.symptomsCheckbox{
+
+  height : 20px;
+
 
 }
 
