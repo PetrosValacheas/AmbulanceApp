@@ -342,11 +342,21 @@ textarea:focus {
 
   background-color: #2E9CCA;
 
+  border: 0;
+  border-radius: 5px;
+
+  cursor: pointer;
+
 }
 
 #hospitalSearch{
 
+  border: 0;
+  margin-left: 100px;
 
+  border-radius: 5px;
+
+  cursor: pointer;
 
   width: 15%;
   font-size: 22px;

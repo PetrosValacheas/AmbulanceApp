@@ -25,6 +25,8 @@ const App = () => (
         <ul>
           <NavLinkItem anchor="Home" path="/" />
           <NavLinkItem anchor="Hospitals" path="/hospitals" />
+           <NavLinkItem anchor="Medical Diagnosis" path="/diagnosis" />
+
           
          
         </ul>
