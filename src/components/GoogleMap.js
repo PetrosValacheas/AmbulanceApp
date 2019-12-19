@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { initMap, getAreaName, nearbySearch } from '../helpers/GoogleMapHelper'
-import firebase from 'firebase'
+import {firebase} from 'firebase'
 import {DB_CONFIG} from '../../src/config'
+
 
 // const initPoint = {lat: 35.6795253, lng: 139.7589926}; 
 

@@ -1,4 +1,4 @@
-
+import firebase from 'firebase'
   // Your web app's Firebase configuration
   var DB_CONFIG= {
     apiKey: "AIzaSyA6OABLVeGtCRGJZkeFOCCF2GgB0o7GlBU",
@@ -9,5 +9,9 @@
     messagingSenderId: "1091294534215",
     appId: "1:1091294534215:web:8b12a44fe0a406dc516f62"
   };
+
+  var config = firebase.initializeApp(DB_CONFIG);
+
+  export default config;
 
 
