@@ -33,7 +33,7 @@ class GoogleMap extends Component {
       let location = {lat:position.coords.latitude, lng:position.coords.longitude}
       initMap(document.getElementById('map'), location)
       getAreaName(location, (addr) => {
-        console.log(addr);
+        //console.log(addr);
         this.setState({locationName: addr.formatted_address});
       })
     }, () => { alert("Location is not Available") })

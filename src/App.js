@@ -38,7 +38,7 @@ const App = () => (
       <Route exact path="/" render={() => <Home />} />  
       <Route exact path="/hospitals" render={() => <GoogleMap />} />
       <Route exact path="/diagnosis" render={() => <Diagnosis />} />
-       <Route exact path="/ambulances" render={() => <Ambulances />} />
+      <Route exact path="/ambulances" render={() => <Ambulances />} />
 
   
       

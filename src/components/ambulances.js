@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
-import { initMap, getAreaName} from '../helpers/GoogleMapHelper'
+import { initMap, getAreaName , createMark} from '../helpers/GoogleMapHelper'
 
 import firebase from 'firebase'
 import config from '../../src/config'
@@ -35,10 +35,10 @@ class Ambulances extends Component{
 			}))
 
       	this.setState(prevState => ({
-   					points: [...prevState.points,snapshot.val()]
+   					points: [...prevState.points,snapshot.child("l").val()]
 			}))
-      //this.setState({contacts: snapshot.val()}); 
-      //this.setState({keys: snapshot.key}); 
+      //this.setState({points: snapshot.child("l").val()}); 
+     // this.setState({keys: snapshot.key}); 
 
     })
 
@@ -60,6 +60,17 @@ class Ambulances extends Component{
    
    //console.log(this.state.keys);
    //console.log(this.state.points);
+   for(var i =0;i<this.state.points.length;i++){
+
+    //console.log(this.state.points[i]);
+    let lat = this.state.points[i][0];
+    let long = this.state.points[i][1];
+
+
+    createMark(lat,long,true);
+   }
+
+
    
   }
 
