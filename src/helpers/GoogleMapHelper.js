@@ -122,28 +122,6 @@ function createMark(lat, long, ifInitPoint , token) {
 function sendNotification(token){
 
  
- // const messaging = config.messaging();
-
-   /*$.ajax({        
-            type : 'POST',
-            url : "https://fcm.googleapis.com/fcm/send",
-            headers : {
-              
-                Authorization : 'key=' + 'BKPKHveGSAJUhUi9j3cf6wm9njxSxvsFsN7hFjIrQn-gm93G8Ssap8agIB93P89hUAdJvrUWY6t7rWYg_MvTaAQ'
-                ,
-                "Access-Control-Allow-Origin":"*"
-            },
-            contentType : 'application/json',
-            dataType: 'json',
-            crossDomain: true,
-            data: JSON.stringify({"to": token, "notification": {"title":"Test","body":"Test"}}),
-            success : function(response) {
-                console.log(response);
-            },
-            error : function(xhr, status, error) {
-                console.log(xhr.error);                   
-            }
-        });*/
 
    fetch(' https://fcm.googleapis.com/fcm/send', {
   method: 'POST',
@@ -156,7 +134,7 @@ function sendNotification(token){
    crossDomain: true,
   body: JSON.stringify({
  
-          "to": "fGO1ThXHM1I:APA91bFVbLpD9zy-eSdNWa4jp1e8H3DXgO0NqZJ1CH3ObPlwuHv__gBoc_X0Rde4XZRokm3sY0M7wkKvQRRJHBmkPnV1wMyC3mmTneNJeDTOPUxpBLAOVTrI6vcIaWNJjcVNRajK4OvG",
+          "to": token.toString(),
           "notification": {
               "body":"Exoume Provlima",
               "title":"Peristatiko"
@@ -164,7 +142,6 @@ function sendNotification(token){
           }
   })
 })
-
 
 
   
