@@ -17,7 +17,8 @@ class Ambulances extends Component{
          	this.state = {
 
       	 	points: [],
-      	 	keys: []
+      	 	keys: [],
+          tokens: []
     	};
     	 this.initMap = this.initMap.bind(this)
     	 this.ambulancesAvailable = this.ambulancesAvailable.bind(this)
@@ -26,6 +27,7 @@ class Ambulances extends Component{
 	 componentWillMount(){
     /* Create reference to messages in Firebase Database */
     let ambulanceRef = config.database().ref('Ambulances Available');
+    let tokenRef = config.database().ref('Ambulance Tokens');
     ambulanceRef.on('child_added', snapshot => {
 
       /* Update React state when message is added at Firebase Database */
@@ -37,6 +39,17 @@ class Ambulances extends Component{
       	this.setState(prevState => ({
    					points: [...prevState.points,snapshot.child("l").val()]
 			}))
+      //this.setState({points: snapshot.child("l").val()}); 
+     // this.setState({keys: snapshot.key}); 
+
+    })
+     tokenRef.on('child_added', snapshot => {
+
+      /* Update React state when message is added at Firebase Database */
+
+        this.setState(prevState => ({
+            tokens: [...prevState.tokens,snapshot.val()]
+      }))
       //this.setState({points: snapshot.child("l").val()}); 
      // this.setState({keys: snapshot.key}); 
 
@@ -62,16 +75,15 @@ class Ambulances extends Component{
    //console.log(this.state.points);
    for(var i =0;i<this.state.points.length;i++){
 
-    //console.log(this.state.points[i]);
+    //console.log(this.state.points[i][0]);
+    //console.log(this.state.points[i][1]);
     let lat = this.state.points[i][0];
     let long = this.state.points[i][1];
-
-
-    createMark(lat,long,true);
+    let token = this.state.tokens[i];
+    
+    createMark(lat,long,true , token);
    }
 
-
-   
   }
 
 	
