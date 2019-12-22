@@ -408,3 +408,17 @@ textarea:focus {
   font-size: 30px;
   
 }
+
+#AccidentIdLabel{
+
+  margin-left: 210px;
+  text-align: center;
+  width: 20%;
+
+}
+
+#AccidentInput{
+
+  width: 35%;
+ 
+}

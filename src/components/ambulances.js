@@ -16,12 +16,15 @@ class Ambulances extends Component{
    		super(props);
          	this.state = {
 
+          accidentMessage: '',
+
       	 	points: [],
       	 	keys: [],
           tokens: []
     	};
     	 this.initMap = this.initMap.bind(this)
     	 this.ambulancesAvailable = this.ambulancesAvailable.bind(this)
+       this.accidentInfos = this.accidentInfos.bind(this)
 	}
 
 	 componentWillMount(){
@@ -69,8 +72,9 @@ class Ambulances extends Component{
    
   }
 
-   ambulancesAvailable() {
-   
+   ambulancesAvailable(e) {
+
+    
    //console.log(this.state.keys);
    //console.log(this.state.points);
    for(var i =0;i<this.state.points.length;i++){
@@ -81,9 +85,17 @@ class Ambulances extends Component{
     let long = this.state.points[i][1];
     let token = this.state.tokens[i];
     
-    createMark(lat,long,true , token);
+    createMark(lat,long,true , token , this.state.accidentMessage);
    }
 
+  }
+
+  accidentInfos(){
+
+
+  const accident = document.querySelector("#AccidentInput");
+  this.state.accidentMessage = accident.value;
+  
   }
 
 	
@@ -95,10 +107,15 @@ class Ambulances extends Component{
      			 <div className='Google-map-wrapper' >
        				 <ButtonGroup className='Map-button-group' style={{marginBottom:'20px'}}>
           
-        			  <Button bsstyle="primary" id="locationButton"  bssize="large" onClick={this.ambulancesAvailable}>
+        			  <Button bsstyle="primary" id="locationButton"  bssize="large" onClick={this.ambulancesAvailable} >
            					Ambulances  
          				 </Button>
        				 </ButtonGroup>
+
+                <div>
+                  <label id="AccidentIdLabel" >Accident Address: </label>
+                  <input id="AccidentInput" type="text"  name="name" onClick={this.accidentInfos} />
+                </div>
        
         		<div id="map" style={{}}></div>
       		</div>

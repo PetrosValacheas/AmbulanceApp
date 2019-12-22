@@ -92,7 +92,7 @@ function getAreaName(latLngNow, cb){
   });
 }
 
-function createMark(lat, long, ifInitPoint , token) {
+function createMark(lat, long, ifInitPoint , token , accidentMsg) {
 
 
  var myLatLng = {lat: lat, lng: long};
@@ -110,7 +110,7 @@ function createMark(lat, long, ifInitPoint , token) {
    
     //let mapUrl = `https://maps.google.com/maps?&ll=${lat},${long}`
 
-    infowindow.setContent(`<a onClick="${sendNotification(token)}" target="_blank">Ambulance Available</a>`);
+    infowindow.setContent(`<a onClick="${sendNotification(token,accidentMsg)}" target="_blank">Ambulance Available</a>`);
     infowindow.open(map, this);
     
   });
@@ -119,7 +119,7 @@ function createMark(lat, long, ifInitPoint , token) {
   }
 }
 
-function sendNotification(token){
+function sendNotification(token,accidentMsg){
 
  
 
@@ -136,7 +136,7 @@ function sendNotification(token){
  
           "to": token.toString(),
           "notification": {
-              "body":"Exoume Provlima",
+              "body":accidentMsg.toString(),
               "title":"Peristatiko"
               
           }
