@@ -6,6 +6,7 @@ import logo from './logo.png';
 import './App.css';
 import GoogleMap from './components/GoogleMap.js'
 import Ambulances from './components/ambulances.js'
+import HelpLine from './components/helpLine.js'
 
 
 //Toggles nav menu visibility
@@ -36,7 +37,7 @@ const App = () => (
       </nav>
       <Route exact path="/" render={() => <Home />} />  
       <Route exact path="/hospitals" render={() => <GoogleMap />} />
-      <Route exact path="/helpLine" render={() => <helpLine />} />
+      <Route exact path="/helpLine" render={() => <HelpLine />} />
       <Route exact path="/ambulances" render={() => <Ambulances />} />
 
   
