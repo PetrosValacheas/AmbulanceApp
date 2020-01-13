@@ -18,7 +18,7 @@ class HelpLine extends Component{
 
   	return(
 
-  		<main>
+  		<main id = "help">
   			<h1>HelpLine</h1>
   			
   	
