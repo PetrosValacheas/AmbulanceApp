@@ -84,7 +84,7 @@ class Ambulances extends Component{
     let lat = this.state.points[i][0];
     let long = this.state.points[i][1];
     let token = this.state.tokens[i];
-    
+
     createMark(lat,long,true , token , this.state.accidentMessage);
    }
 
@@ -93,9 +93,23 @@ class Ambulances extends Component{
   accidentInfos(){
 
 
-  const accident = document.querySelector("#AccidentInput");
-  this.state.accidentMessage = accident.value;
-  
+  const accident = document.querySelector("#AccidentInput").value;
+  //this.state.accidentMessage = accident.value;
+    this.setState({accidentMessage:accident},function () {
+
+     for(var i =0;i<this.state.points.length;i++){
+
+    //console.log(this.state.points[i][0]);
+    //console.log(this.state.points[i][1]);
+    let lat = this.state.points[i][0];
+    let long = this.state.points[i][1];
+    let token = this.state.tokens[i];
+
+    createMark(lat,long,true , token , this.state.accidentMessage);
+   }
+    });
+
+
   }
 
 	

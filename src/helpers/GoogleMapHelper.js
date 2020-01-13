@@ -121,6 +121,9 @@ function createMark(lat, long, ifInitPoint , token , accidentMsg) {
 
 function sendNotification(token,accidentMsg){
 
+  console.log(token);
+  console.log(accidentMsg);
+
  
 
    fetch(' https://fcm.googleapis.com/fcm/send', {
@@ -137,7 +140,7 @@ function sendNotification(token,accidentMsg){
           "to": token.toString(),
           "notification": {
               "body":accidentMsg.toString(),
-              "title":"Peristatiko"
+              "title":"Emergency Call"
               
           }
   })
