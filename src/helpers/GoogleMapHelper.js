@@ -140,8 +140,8 @@ function sendNotification(token,accidentMsg){
           "to": token.toString(),
           "notification": {
               "body":accidentMsg.toString(),
-              "title":"Emergency Call"
-              
+              "title":"Emergency Call" ,
+              "click_action"  : "com.pe21.notification"
           }
   })
 })
