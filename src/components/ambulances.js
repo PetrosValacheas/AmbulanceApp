@@ -28,35 +28,7 @@ class Ambulances extends Component{
 	}
 
 	 componentWillMount(){
-    /* Create reference to messages in Firebase Database */
-    let ambulanceRef = config.database().ref('Ambulances Available');
-    let tokenRef = config.database().ref('Ambulance Tokens');
-    ambulanceRef.on('child_added', snapshot => {
-
-      /* Update React state when message is added at Firebase Database */
-
-      	this.setState(prevState => ({
-   					keys: [...prevState.keys,snapshot.key]
-			}))
-
-      	this.setState(prevState => ({
-   					points: [...prevState.points,snapshot.child("l").val()]
-			}))
-      //this.setState({points: snapshot.child("l").val()}); 
-     // this.setState({keys: snapshot.key}); 
-
-    })
-     tokenRef.on('child_added', snapshot => {
-
-      /* Update React state when message is added at Firebase Database */
-
-        this.setState(prevState => ({
-            tokens: [...prevState.tokens,snapshot.val()]
-      }))
-      //this.setState({points: snapshot.child("l").val()}); 
-     // this.setState({keys: snapshot.key}); 
-
-    })
+    
 
     this.initMap()
 
@@ -73,6 +45,36 @@ class Ambulances extends Component{
   }
 
    ambulancesAvailable(e) {
+
+    /* Create reference to messages in Firebase Database */
+    let ambulanceRef = config.database().ref('Ambulances Available');
+    let tokenRef = config.database().ref('Ambulance Tokens');
+    ambulanceRef.on('child_added', snapshot => {
+
+      /* Update React state when message is added at Firebase Database */
+
+        this.setState(prevState => ({
+            keys: [...prevState.keys,snapshot.key]
+      }))
+
+        this.setState(prevState => ({
+            points: [...prevState.points,snapshot.child("l").val()]
+      }))
+      //this.setState({points: snapshot.child("l").val()}); 
+     // this.setState({keys: snapshot.key}); 
+
+    })
+     tokenRef.on('child_added', snapshot => {
+
+      /* Update React state when message is added at Firebase Database */
+
+        this.setState(prevState => ({
+            tokens: [...prevState.tokens,snapshot.val()]
+      }))
+      //this.setState({points: snapshot.child("l").val()}); 
+     // this.setState({keys: snapshot.key}); 
+
+    })
 
     
    //console.log(this.state.keys);
