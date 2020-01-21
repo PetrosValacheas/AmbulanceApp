@@ -21,7 +21,7 @@ function initMap(element, initPoint = {lat: 37.962761, lng: 23.707459}, zoom = 1
   service = new google.maps.places.PlacesService(map);
 }
 
-function nearbySearch(type =[],placeRadius = 500) {
+function nearbySearch(type =[],placeRadius = 1000) {
 
   console.log("Type: " + type);
 

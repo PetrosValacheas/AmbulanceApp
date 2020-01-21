@@ -42,7 +42,7 @@ class GoogleMap extends Component {
     // alert(e.currentTarget.getAttribute('data-type'))
 
     let locationTypes = e.currentTarget.getAttribute('data-type')
-    nearbySearch([locationTypes], 1000)
+    nearbySearch([locationTypes], 10000)
   }
   componentDidMount() {
   
