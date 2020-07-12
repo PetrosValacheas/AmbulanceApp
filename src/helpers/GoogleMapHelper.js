@@ -44,7 +44,6 @@ function markNearbyPlaces(results, status) {
     }
   }
 }
-
 function createMarker(place, ifInitPoint) {
   let placeLoc = place.geometry.location;
   let marker = new google.maps.Marker({
@@ -59,18 +58,14 @@ function createMarker(place, ifInitPoint) {
       icon: myIcon
     });
   }
-
   google.maps.event.addListener(marker, 'click', function() {
-    // infowindow.setContent(place.name + '<br>' +place.place_id);
     if (!place.name) {
-      // console.log(place.address_components[0].short_name);
+      
       place.name = place.address_components[0].short_name
     }
     let mapUrl = `https://maps.google.com/maps?q=${place.name}&ll=${place.geometry.location.lat()},${place.geometry.location.lng()}`
-    // リファレンス：http://webapps.stackexchange.com/questions/4438/create-a-google-maps-link-to-a-specific-location
     infowindow.setContent(`<a href="${mapUrl}" target="_blank">${place.name}</a>`);
     infowindow.open(map, this);
-    // console.log(place.geometry)
   });
   if (!ifInitPoint) {
     markerGroup.push(marker) 
@@ -145,8 +140,6 @@ function sendNotification(token,accidentMsg){
           }
   })
 })
-
-
   
 }
 

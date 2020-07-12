@@ -60,8 +60,7 @@ class Ambulances extends Component{
         this.setState(prevState => ({
             points: [...prevState.points,snapshot.child("l").val()]
       }))
-      //this.setState({points: snapshot.child("l").val()}); 
-     // this.setState({keys: snapshot.key}); 
+      
 
     })
      tokenRef.on('child_added', snapshot => {
@@ -71,8 +70,7 @@ class Ambulances extends Component{
         this.setState(prevState => ({
             tokens: [...prevState.tokens,snapshot.val()]
       }))
-      //this.setState({points: snapshot.child("l").val()}); 
-     // this.setState({keys: snapshot.key}); 
+     
 
     })
 
